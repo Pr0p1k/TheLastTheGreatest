@@ -1,0 +1,129 @@
+<head>
+    <title>ПИП</title>
+    <link href="img/logo.png" rel="shortcut icon" type="image/x-icon"/>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"/>
+    <script src="script.js"/>
+    <meta name="description"/>
+    <meta charset="utf-8"/>
+
+</head>
+
+<body>
+    <div class="header">
+        <div id="logo">
+            <img src="img/logo.png" alt="Логотип ВТ"/>
+        </div>
+        <div id="author">
+            <p>Прокопьев Александр и Вязников Иван</p>
+        </div>
+
+        <div id="group">
+            <p>Группа P3212</p>
+        </div>
+        <div id="variant">
+            <p>Вариант 21212</p>
+        </div>
+
+    </div>
+    <div class="main">
+        <div class="io">
+            <div class="data_input">
+                <h:form id="calculate">
+                
+                    <div class="elements">
+                        <div id="X_input">
+                            <label><span>Величина X </span>
+                            <p:spinner min ="#{inputBean.xMin}"
+                                       max ="#{inputBean.xMax}" value="#{inputBean.x}" stepFactor="#{inputBean.xStep}" id="X"
+                                       >
+                                       <f:validateDoubleRange min="-3" max = "3" />
+               
+                                       </p:spinner>
+                            </label>
+                            <br/>
+                            <p class="ok_comment" id="X_comment">Значение X не выбрано</p>
+                        </div>
+                        <div id="Y_input">
+                            <label><span>Величина Y </span>
+                                <p:inputText id="Y" value="#{inputBean.y}">
+                                <f:validateDoubleRange min="-5" max = "5" />
+                                </p:inputText>
+                            </label><br/>
+                            <div class="hidden"><p:inputText id="sendR" value="#{inputBean.r}"/></div>
+                            <p class="ok_comment" id="Y_comment">Значение Y не корректно</p>
+                        </div>
+                        <div id="R_input">
+                            <label><span>Величина R </span>
+                                <h:outputText id="valueR"/>
+                                <ace:sliderEntry min="#{inputBean.rMin}" max="#{inputBean.rMax}"
+                                                 stepPercent="#{inputBean.rStep}"
+                                                  id="slideR"
+                                                 length="250px" widgetVar="sliderjs">
+                                                 
+                                                 
+                                                 </ace:sliderEntry>
+                                                 
+                            </label>
+                            <p class="ok_comment" id="R_comment">Значение R не выбрано</p>
+                        </div>
+                    </div>
+                    <div class="send">
+                        <div class="hidden">
+                            <h:commandButton id="sender" update="tabli" action="#{inputBean.submitForm}">
+
+                                            </h:commandButton></div>
+                        <h:commandButton value="Проверить" id="send"  onclick="check(this)" />
+                    </div>
+                </h:form>
+            </div>
+            <div id="script_output">
+                <h:outputText />
+                <h:dataTable id="tabli" value= "#{databaseBean.points}" var="o">
+                
+                    <h:column>
+                        <!--column header-->
+                        <f:facet name="header">X</f:facet>
+                        <!--row record-->
+                        #{o.x}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Y</f:facet>
+                        #{o.y}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">R</f:facet>
+                        #{o.r}
+                    </h:column>
+					
+					<h:column>
+                        <f:facet name="header">Hit</f:facet>
+                        #{o.hit}
+                    </h:column>
+					
+                </h:dataTable>
+            </div>
+        </div>
+
+        <div id="computed_result">
+            <canvas id="result"/>
+        </div>
+        <form>
+        <h:commandButton action = "#{navigationController.processStartPage}" value = "Start page">
+   <f:param name = "pageId" value = "start" />
+   </h:commandButton>
+   </form>
+    </div>
+    <h:inputText readonly="true" id = "connectionState">
+    </h:inputText>
+    <div class="main" id="footer">
+        <p id="educator">Письмак А.Е.</p>
+        <p id="info">Санкт-Петербург 2018 год</p>
+    </div>
+    <div id="warning">
+        <p>Радиус области ещё не задан<br/>Введите значение в поле R</p>
+    </div>
+</body>
+</html>

@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/primeng/resources/themes/bootstrap/theme.css';
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-image: url("assets/wallpaper.jpg");
+  background-size: cover;
+}
+
+.main-block {
+  margin-top: 10px;
+}

@@ -1,0 +1,12 @@
+.main {
+  margin: auto;
+  width: 95%;
+  box-shadow: 0 0 20px rgba(0, 0, 127, 0.9);
+  height: 600px;
+  background-color: rgba(0, 0, 127, 0.2);
+}
+
+#lab {
+
+  margin: auto;
+}
