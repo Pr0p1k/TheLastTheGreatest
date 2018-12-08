@@ -6,11 +6,15 @@ import {AppRoutingModule} from './app-routing.module';
 import {MainComponent} from './main/main.component';
 import {HeaderComponent} from './header/header.component';
 import {ButtonModule} from 'primeng/components/button/button';
+import { LabComponent } from './lab/lab.component';
+import { StartPageComponent } from './start-page/start-page.component';
 
 @NgModule({
   declarations: [
     MainComponent,
-    HeaderComponent
+    HeaderComponent,
+    LabComponent,
+    StartPageComponent
   ],
   imports: [
     BrowserModule,
@@ -23,4 +27,5 @@ import {ButtonModule} from 'primeng/components/button/button';
   bootstrap: [MainComponent, HeaderComponent]
 })
 export class AppModule {
+  show = false;
 }

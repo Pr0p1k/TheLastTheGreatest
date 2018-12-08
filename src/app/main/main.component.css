@@ -1,10 +1,6 @@
-.main {
-  margin: auto;
-  width: 90%;
-  box-shadow: 0 0 20px rgba(0, 0, 127, 0.9);
-  height: 600px;
-  /*background-color: rgba(0, 0, 127, 0.2);*/
-  background-image: url("../../assets/ricardo.gif");
-  background-size: cover;
-}
+@import '../../../node_modules/primeng/resources/themes/darkness/theme.css';
 
+.main-block {
+  margin-top: 6%;
+  margin-bottom: 2%;
+}

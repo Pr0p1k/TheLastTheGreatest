@@ -1,5 +1,11 @@
-<div class="main">
-  <div id="lab">
-    <p-button label="Main page" (onClick)="router.navigateByUrl('lab.html')"></p-button>
-  </div>
+<div id="header">
+  <app-header></app-header>
 </div>
+<div class="main-block">
+  <nav>
+    <p-button routerLink="lab" label="Go to lab page" *ngIf="isStart" (click)="isStart = !isStart"></p-button>
+    <p-button routerLink="start" label="Go to start page" *ngIf="!isStart" (click)="isStart = !isStart"></p-button>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+
