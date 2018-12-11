@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-start-page',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartPageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    this.startTime();
+  }
+
+  async startTime() {
+    const today = new Date();
+      setTimeout(document.getElementById('time').innerText = today.getHours()
+        + ':' + today.getMinutes() + ':' + today.getSeconds(), 1000);
   }
 
 }

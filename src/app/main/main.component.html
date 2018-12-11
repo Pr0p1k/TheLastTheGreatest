@@ -3,9 +3,11 @@
 </div>
 <div class="main-block">
   <nav>
-    <p-button routerLink="lab" label="Go to lab page" *ngIf="isStart" (click)="isStart = !isStart"></p-button>
-    <p-button routerLink="start" label="Go to start page" *ngIf="!isStart" (click)="isStart = !isStart"></p-button>
+    <div class="nav-btn">
+      <p-button routerLink="lab" label="Go to lab page" *ngIf="this.router.url === '/start'"></p-button>
+      <p-button routerLink="start" label="Go to start page"
+                *ngIf="this.router.url === '/lab'"></p-button>
+    </div>
   </nav>
   <router-outlet></router-outlet>
 </div>
-

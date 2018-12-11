@@ -1,6 +1,16 @@
-@import '../../../node_modules/primeng/resources/themes/darkness/theme.css';
+@import '../../../node_modules/primeng/resources/themes/omega/theme.css';
 
 .main-block {
   margin-top: 6%;
   margin-bottom: 2%;
+}
+.nav-btn {
+  width: fit-content;
+  margin: auto;
+}
+
+#txt {
+  margin: auto;
+  font-size: 24px;
+  color: white;
 }

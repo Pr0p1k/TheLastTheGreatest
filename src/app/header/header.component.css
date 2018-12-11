@@ -9,11 +9,12 @@
   top: 0;
   height: 60px;
   width: 100vw;
-  background-color: rgba(0, 0, 127, 0.8);
+  background-color: rgba(34, 134, 195, 0.8);
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 30px;
   color: white;
+  z-index: 100;
 }
 
 #logo {
@@ -40,16 +41,17 @@
   }
 
   #logo img {
-    height: 50px;
+    height: 45px;
   }
 
   #login {
     float: right;
     margin-right: 35px;
   }
+
 }
 
-@media only all and (min-width: 735px) and (max-width: 1174px) {
+@media only all and (min-width: 734px) and (max-width: 1174px) {
 
   .header p {
     font-weight: bold;
@@ -103,5 +105,14 @@
     float: right;
     margin-right: 20px;
   }
+
+}
+
+#sign-in-form > * {
+  margin: 20px;
+}
+
+#sign-up-form > * {
+  margin: 20px;
 }
 

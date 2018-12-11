@@ -7,6 +7,45 @@
     <p class="sub">Group P3212 Variant 21222</p>
   </div>
   <div id="login">
-    <p-button label="login"></p-button>
+    <p-button label="login" (click)="display = true"></p-button>
   </div>
 </div>
+<p-sidebar [(visible)]="display" position="right" [style]="{width: '380px'}">
+  <div id="sign-in-form" *ngIf="isLogin">
+  <span class="ui-float-label" id="sign-in-name">
+    <input id="float-input-in" type="text" size="30" pInputText>
+    <label for="float-input-in">Username</label>
+  </span>
+    <span class="ui-float-label" id="sign-in-pass">
+    <input id="password" type="password" pPassword [feedback]="false" [(ngModel)]="firstPassword"/>
+    <label for="password">Password</label>
+  </span>
+    <span id="sign-in-confirm">
+      <p-button label="Sign in"></p-button>
+    </span>
+    <span>
+      <p-button label="New user?" (onClick)="isLogin = !isLogin"></p-button>
+    </span>
+  </div>
+  <div id="sign-up-form" *ngIf="!isLogin">
+  <span class="ui-float-label" id="sign-up-name">
+    <input id="float-input-up" type="text" size="30" pInputText [(ngModel)]="username">
+    <label for="float-input-up">Username</label>
+  </span>
+    <span class="ui-float-label" id="sign-up-pass">
+      <input id="password-up" type="password" pPassword [(ngModel)]="firstPassword"/>
+      <label for="password-up">Password</label>
+    </span>
+    <span class="ui-float-label" id="sign-up-pass-confirm">
+    <input id="pass-confirm" type="password" pPassword [(ngModel)]="secondPassword"/>
+    <label for="pass-confirm">Confirm password</label>
+  </span>
+    <div id="sign-up-confirm">
+      <p-button label="Sign up" (onClick)="register()"></p-button>
+    </div>
+    <div>
+      <p-button label="Have an account?" (onClick)="isLogin = !isLogin"></p-button>
+    </div>
+  </div>
+</p-sidebar>
+<p-toast></p-toast>

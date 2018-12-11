@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-lab',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LabComponent implements OnInit {
 
-  constructor() { }
+  y: number;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

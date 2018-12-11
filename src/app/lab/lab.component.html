@@ -1,25 +1,37 @@
 <div class="main">
   <div class="io">
     <div class="data_input">
-
+      <form>
+        <div class="elements">
+          <div id="X_input">
+            Value x:
+            <p-spinner [min]="-5" [max]="3" [step]="1"></p-spinner>
+          </div>
+          <div id="Y_input">
+            Value y:
+            <p-slider></p-slider>
+          </div>
+          <div id="R_input">
+            Value r:
+            <p-spinner></p-spinner>
+          </div>
+        </div>
+      </form>
     </div>
     <div id="script_output">
-
+      <p-dataTable>
+        <p-row>
+          <p-column>sdg</p-column>
+        </p-row>
+      </p-dataTable>
     </div>
   </div>
 
   <div id="computed_result">
     <canvas id="result"></canvas>
   </div>
-  <form>
-    <!--<h:commandButton action="#{navigationController.processStartPage}" value="Start page">-->
-      <!--<f:param name="pageId" value="start"/>-->
-    <!--</h:commandButton>-->
-  </form>
 </div>
-<!--<h:inputText readonly="true" id="connectionState">-->
-<!--</h:inputText>-->
-<div class="main" id="footer">
+<div id="footer">
   <p id="educator">Письмак А.Е.</p>
   <p id="info">Санкт-Петербург 2018 год</p>
 </div>

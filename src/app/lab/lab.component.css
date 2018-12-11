@@ -1,3 +1,6 @@
+/*@import '../../../node_modules/primeng/resources/themes/omega/theme.css';*/
+/*@import '../../../node_modules/primeng/resources/primeng.min.css';*/
+
 body {
   margin: 0;
   padding: 0;
@@ -6,61 +9,63 @@ body {
   overflow-x: hidden;
 }
 
-.header {
-  position: relative;
-  float: top;
-  height: 60px;
-  width: 100%;
-  background-color: #2286c3;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 30px;
+/*.header {*/
+/*position: relative;*/
+/*float: top;*/
+/*height: 60px;*/
+/*width: 100%;*/
+/*background-color: #2286c3;*/
+/*padding-top: 10px;*/
+/*padding-left: 10px;*/
+/*padding-right: 30px;*/
 
-}
+/*}*/
 
-#logo {
-  position: relative;
-  float: left;
-}
+/*#logo {*/
+/*position: relative;*/
+/*float: left;*/
+/*}*/
 
-#logo img {
-  height: 50px;
-}
+/*#logo img {*/
+/*height: 50px;*/
+/*}*/
 
-#author {
-  position: relative;
-  float: left;
-  margin-left: 80px;
-}
+/*#author {*/
+/*position: relative;*/
+/*float: left;*/
+/*margin-left: 80px;*/
+/*}*/
 
-#group {
-  position: relative;
-  float: right;
-  margin-right: 30px;
-}
+/*#group {*/
+/*position: relative;*/
+/*float: right;*/
+/*margin-right: 30px;*/
+/*}*/
 
-#variant {
-  position: relative;
-  float: right;
-  margin-right: 30px;
-}
+/*#variant {*/
+/*position: relative;*/
+/*float: right;*/
+/*margin-right: 30px;*/
+/*}*/
 
-.header p {
-  font-family: sans-serif;
-  color: black;
-  font-weight: bold;
-  font-size: 18px;
-}
+/*.header p {*/
+/*font-family: sans-serif;*/
+/*color: black;*/
+/*font-weight: bold;*/
+/*font-size: 18px;*/
+/*}*/
 
 .main {
   height: fit-content;
   overflow: auto;
   margin: 10px 10px 10px 10px;
-  background-color: #9be7ff;
+  /*background-color: #9be7ff;*/
   border-radius: 10px;
   position: relative;
   padding: 10px;
   box-shadow: 0 0 8px #2286c3;
+  background-image: url("../../assets/ricardo.gif");
+  background-size: cover;
 }
 
 #task_text {
@@ -98,12 +103,6 @@ body {
   margin-left: 10px;
 }
 
-.io {
-  width: 60%;
-  float: left;
-  margin-right: 10px;
-}
-
 .data_input {
   background-color: #2286c3;
   margin-bottom: 10px;
@@ -121,6 +120,7 @@ body {
   padding: 5px;
   border: 2px black solid;
   margin: 10px;
+  overflow: visible;
 }
 
 .elements {
@@ -138,6 +138,7 @@ body {
   position: relative;
   background-color: white;
   width: auto;
+
 }
 
 #computed_result:after {
@@ -194,11 +195,11 @@ table, td, tr {
   border-collapse: collapse;
 }
 
-input[type="text"] {
-  border-radius: 3px;
-  border: none;
-  background-color: white;
-}
+/*input[type="text"] {*/
+/*border-radius: 3px;*/
+/*border: none;*/
+/*background-color: white;*/
+/*}*/
 
 .error {
   box-shadow: 0 0 20px #aa0000;
@@ -206,10 +207,6 @@ input[type="text"] {
 
 .error span {
   color: #aa0000;
-}
-
-#footer {
-  background-color: #2286c3;
 }
 
 #educator {
@@ -234,7 +231,18 @@ input[type="text"] {
   display: none;
 }
 
-#calculate:slideR_hidden {
-  padding-top: 10px;
+@media only all and (min-width: 734px) {
+  .io {
+    float: left;
+    width: 60%;
+    margin-right: 10px;
+  }
 }
 
+@media only all and (max-width: 734px) {
+  .io {
+    float: top;
+    width: available;
+    margin-bottom: 10px;
+  }
+}
